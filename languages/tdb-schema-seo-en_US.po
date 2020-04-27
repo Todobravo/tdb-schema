@@ -1,0 +1,174 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: TDB Schema SEO\n"
+"POT-Creation-Date: 2020-04-27 18:10+0200\n"
+"PO-Revision-Date: 2020-04-27 18:35+0200\n"
+"Language-Team: TodoBravo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: tdb-schema-seo.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: en_US\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: includes/vc_map.php:20 includes/vc_map.php:29
+msgid "Schema FAQ Page"
+msgstr ""
+
+#. Author of the plugin/theme
+#: includes/vc_map.php:28 includes/vc_map.php:44 includes/vc_map.php:81
+msgid "TodoBravo"
+msgstr ""
+
+#: includes/vc_map.php:38
+msgid "Schema FAQ item"
+msgstr ""
+
+#: includes/vc_map.php:48
+msgid "Question"
+msgstr ""
+
+#: includes/vc_map.php:51
+msgid "Enter your question"
+msgstr ""
+
+#: includes/vc_map.php:56
+msgid "Answer"
+msgstr ""
+
+#: includes/vc_map.php:59
+msgid "Enter your answer"
+msgstr ""
+
+#: includes/vc_map.php:76
+msgid "Schema Product"
+msgstr ""
+
+#: includes/vc_map.php:85
+msgid "Name"
+msgstr ""
+
+#: includes/vc_map.php:88
+msgid "Enter the name of the product"
+msgstr ""
+
+#: includes/vc_map.php:93
+msgid "Description"
+msgstr ""
+
+#: includes/vc_map.php:96
+msgid "Enter the description of the product"
+msgstr ""
+
+#: includes/vc_map.php:100
+msgid "MPN"
+msgstr ""
+
+#: includes/vc_map.php:103
+msgid "Enter the manufacturer Part Number (MPN) of the product"
+msgstr ""
+
+#: includes/vc_map.php:107
+msgid "SKU"
+msgstr ""
+
+#: includes/vc_map.php:110
+msgid "Enter the SKU of the product"
+msgstr ""
+
+#: includes/vc_map.php:114
+msgid "Brand"
+msgstr ""
+
+#: includes/vc_map.php:117
+msgid "Enter the brand of the product"
+msgstr ""
+
+#: includes/vc_map.php:121
+msgid "Images"
+msgstr ""
+
+#: includes/vc_map.php:124
+msgid "Select or upload product images"
+msgstr ""
+
+#: includes/vc_map.php:128
+msgid "ratingValue"
+msgstr ""
+
+#: includes/vc_map.php:131
+msgid "Enter the ratingValue of the product"
+msgstr ""
+
+#: includes/vc_map.php:132 includes/vc_map.php:140
+msgid "Agregate Review"
+msgstr ""
+
+#: includes/vc_map.php:136
+msgid "reviewCount"
+msgstr ""
+
+#: includes/vc_map.php:139
+msgid "Enter the reviewCount of the ratingValue"
+msgstr ""
+
+#: includes/vc_map.php:144
+msgid "offerCount"
+msgstr ""
+
+#: includes/vc_map.php:147
+msgid "Enter the offerCount"
+msgstr ""
+
+#: includes/vc_map.php:148 includes/vc_map.php:156 includes/vc_map.php:164
+#: includes/vc_map.php:172
+msgid "Agregate Offer"
+msgstr ""
+
+#: includes/vc_map.php:152
+msgid "lowPrice"
+msgstr ""
+
+#: includes/vc_map.php:155
+msgid "Enter the lowPrice"
+msgstr ""
+
+#: includes/vc_map.php:160
+msgid "highPrice"
+msgstr ""
+
+#: includes/vc_map.php:163
+msgid "Enter the highPrice"
+msgstr ""
+
+#: includes/vc_map.php:168
+msgid "priceCurrency"
+msgstr ""
+
+#: includes/vc_map.php:171
+msgid "Enter the priceCurrency code EUR, USD..."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "TDB Schema SEO"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/todobravo/tdb-schema-seo/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Add structured data (schema.org) to your wordpress news, blog and pages"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.todobravo.es/"
+msgstr ""
