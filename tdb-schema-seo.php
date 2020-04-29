@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: TDB Schema SEO
- * Version: 1.0.0
+ * Version: 1.1.0
  * Plugin URI: https://github.com/todobravo/tdb-schema-seo/
  * Description: Add structured data (schema.org) to your wordpress news, blog and pages
  * Author: TodoBravo

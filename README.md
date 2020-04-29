@@ -9,6 +9,7 @@ It also includes addons for WPBakery Page Builder.
 Available schema:
 - **FAQPage**: [https://schema.org/FAQPage](https://schema.org/FAQPage)
 - **Product**: [https://schema.org/Product](https://schema.org/Product)
+- **LocalBusiness**: [https://schema.org/LocalBusiness](https://schema.org/LocalBusiness)
 
 More information are available in spanish on [https://www.todobravo.es/desarrollo-web/](https://www.todobravo.es/desarrollo-web/).
 
@@ -30,6 +31,13 @@ Standard WordPress shortcodes are available:
 
 Parameters list:
 - name, description, mpn, sku, brand, ratingvalue, reviewcount, offercount, lowprice, highprice, pricecurrency
+- images: list of id images separate with comma
+
+### LocalBusiness ###
+    [tdb_schema_seo_localbusiness paramter1="" parameters2=""]
+
+Parameters list:
+- name, description, streetaddress, addresslocality, addressregion, postalcode, addresscountry, latitude, longitude, url, telephone, hasmap, ratingvalue, reviewcount
 - images: list of id images separate with comma
 
 ## License

@@ -14,7 +14,7 @@ Add structured data (schema.org) to your wordpress news, blog and pages.
 Add structured data (schema.org) to your news, blog and pages, and enhance your appearance in Google Search results.
 The data are added in JSON-LD format using shortcodes.
 Includes addons for WPBakery Page Builder.
-Available schema: FAQPage, Product
+Available schema: FAQPage, Product, LocalBusiness
 
 == Installation ==
 Just install the plugin and active it.
@@ -22,3 +22,7 @@ Just install the plugin and active it.
 == Changelog ==
 = 1.0.0 =
 * Initial release.
+
+== Changelog ==
+= 1.1.0 =
+* Add LocalBusiness.
