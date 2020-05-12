@@ -47,7 +47,7 @@ add_shortcode( 'tdb_schema_seo_faqitem', 'tdb_schema_seo_faqitem_func' );
  * Schema Product
  * [tdb_schema_seo_product]
  * Parameters
- * 	name, description, mpn, sku, brand, ratingvalue, reviewcount, offercount, lowprice, highprice, pricecurrency
+ * 	name, description, mpn, sku, brand, ratingvalue, reviewcount, reviewratingvalue, reviewauthor, reviewbody, offercount, lowprice, highprice, pricecurrency
  * 	images: list of id images separate with comma
  */
 function tdb_schema_seo_product_func ($atts) {
@@ -60,6 +60,9 @@ function tdb_schema_seo_product_func ($atts) {
 		'brand' => '',
 		'ratingvalue' => '',
 		'reviewcount' => '',
+		'reviewratingvalue' => '',
+		'reviewauthor' => '',
+		'reviewbody' => '',
 		'offercount' => '',
 		'lowprice' => '',
 		'highprice' => '',
@@ -84,6 +87,8 @@ function tdb_schema_seo_product_func ($atts) {
 	if ($a['sku'] !== '') $json_arr['sku'] = esc_attr($a['sku']);
 	if ($a['brand'] !== '') $json_arr['brand'] = array('@type' => 'Brand', 'name' => esc_attr($a['brand']));
 	if ($a['ratingvalue'] !== '') $json_arr['aggregateRating'] = array('@type' => 'AggregateRating', 'ratingValue' => esc_attr($a['ratingvalue']), 'reviewCount' => esc_attr($a['reviewcount']));
+	if ($a['reviewratingvalue'] !== '') $json_arr['review'] = array('@type' => 'Review', 'reviewRating' => array('@type' => 'Rating', 'ratingValue' => esc_attr($a['reviewratingvalue'])), 'author' => array('@type' => 'Person', 'name' => esc_attr($a['reviewauthor'])), 'reviewBody' => esc_attr($a['reviewbody']));
+	
 	if ($a['offercount'] !== '') $json_arr['offers'] = array('@type' => 'AggregateOffer', 'offerCount' => esc_attr($a['offercount']), 'lowPrice' => esc_attr($a['lowprice']), 'highPrice' => esc_attr($a['highprice']), 'priceCurrency' => esc_attr($a['pricecurrency']));
 	
 	
@@ -95,13 +100,14 @@ add_shortcode( 'tdb_schema_seo_product', 'tdb_schema_seo_product_func' );
  * Schema LocalBusiness
  * [tdb_schema_seo_localbusiness]
  * Parameters
- * 	name, description, streetaddress, addresslocality, addressregion, postalcode, addresscountry, latitude, longitude, url, telephone, hasmap, ratingvalue, reviewcount
+ * 	id,  memberof, name,description, pricerange, streetaddress, addresslocality, addressregion, postalcode, addresscountry, latitude, longitude, url, telephone, hasmap, ratingvalue, reviewcount
  * 	images: list of id images separate with comma
  */
 
 function tdb_schema_seo_localbusiness_func ($atts) {
 	$a = shortcode_atts( array(
                 'id' => '',
+		'memberof' => '',
 		'name' => '',
 		'description' => '',
 		'streetaddress' => '',
@@ -117,12 +123,14 @@ function tdb_schema_seo_localbusiness_func ($atts) {
 		'ratingvalue' => '',
 		'reviewcount' => '',
 		'images' => '',
+		'pricerange' => '',
         ), $atts );
 	
 	$json_arr = array();
 	$json_arr['@context'] = 'https://schema.org';
 	$json_arr['@type'] = 'LocalBusiness';
 	$json_arr['@id'] = esc_attr($a['id']);
+	if ($a['memberof'] !== '') $json_arr['memberof'] = array('@type' => 'Organization', '@id' => esc_attr($a['memberof']));
 	$json_arr['name'] = esc_attr($a['name']);
 	
 	$json_arr['address'] = array('@type' => 'PostalAddress', 'streetAddress' => esc_attr($a['streetaddress']), 'addressLocality' => esc_attr($a['addresslocality']), 'addressRegion' => esc_attr($a['addressregion']), 'postalCode' => esc_attr($a['postalcode']), 'addressCountry' => esc_attr($a['addresscountry']));
@@ -144,9 +152,63 @@ function tdb_schema_seo_localbusiness_func ($atts) {
 		}
 		if ($images_url) $json_arr['image'] = $images_url;
 	}
+	if ($a['pricerange'] !== '') $json_arr['priceRange'] = esc_attr($a['pricerange']);
 	
 	return '<div class="wpb_tdb_schema_seo"><script type="application/ld+json">' .json_encode($json_arr) .'</script></div>';
 }
 add_shortcode( 'tdb_schema_seo_localbusiness', 'tdb_schema_seo_localbusiness_func' );
+
+/*
+ * Schema Service
+ * [tdb_schema_seo_service]
+ * Parameters
+ * 	name, description, servicetype, provider, brand, offercount, lowprice, highprice, pricecurrency
+ *	areaserved: list of areas separate with comma
+ * 	images: list of id images separate with comma
+ */
+function tdb_schema_seo_service_func ($atts) {
+	$a = shortcode_atts( array(
+                'name' => '',
+		'description' => '',
+		'servicetype' => '',
+		'areaserved' => '',
+		'provider' => '',
+		'brand' => '',
+		'images' => '',
+		'offercount' => '',
+		'lowprice' => '',
+		'highprice' => '',
+		'pricecurrency' => 'EUR'
+		
+        ), $atts );
+	
+	$json_arr = array();
+	$json_arr['@context'] = 'https://schema.org';
+	$json_arr['@type'] = 'Service';
+	$json_arr['name'] = esc_attr($a['name']);
+	$json_arr['description'] = esc_attr($a['description']);
+	if ($a['servicetype'] !== '') $json_arr['serviceType'] = esc_attr($a['servicetype']);
+	if ($a['areaserved'] !== '') {
+		$json_arr['areaServed'] = explode(',', $a['areaserved']);
+	}
+	
+	if ($a['provider'] !== '') $json_arr['provider'] = array('@type' => 'LocalBusiness', '@id' => esc_attr($a['provider']));
+	
+	if ($a['images'] !== '') {
+		$images_id = explode(',', $a['images']);
+		$images_url = array();
+		foreach($images_id as $i){
+			if (wp_get_attachment_url($i)) $images_url[] = wp_get_attachment_url($i);
+		}
+		if ($images_url) $json_arr['image'] = $images_url;
+	}
+	if ($a['brand'] !== '') $json_arr['brand'] = array('@type' => 'Brand', 'name' => esc_attr($a['brand']));
+	if ($a['offercount'] !== '') $json_arr['offers'] = array('@type' => 'AggregateOffer', 'offerCount' => esc_attr($a['offercount']), 'lowPrice' => esc_attr($a['lowprice']), 'highPrice' => esc_attr($a['highprice']), 'priceCurrency' => esc_attr($a['pricecurrency']));
+	
+	
+	
+	return '<div class="wpb_tdb_schema_seo"><script type="application/ld+json">' .json_encode($json_arr) .'</script></div>';
+}
+add_shortcode( 'tdb_schema_seo_service', 'tdb_schema_seo_service_func' );
 
 ?>

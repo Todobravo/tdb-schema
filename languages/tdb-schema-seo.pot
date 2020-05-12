@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TDB Schema SEO\n"
-"POT-Creation-Date: 2020-04-29 12:35+0200\n"
+"POT-Creation-Date: 2020-05-09 08:49+0200\n"
 "PO-Revision-Date: 2020-04-27 18:05+0200\n"
 "Last-Translator: \n"
 "Language-Team: TodoBravo\n"
@@ -21,262 +21,381 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: includes/vc_map.php:274 includes/vc_map.php:283
+#: includes/vc_map.php:20
+msgid "Inexpensive"
+msgstr ""
+
+#: includes/vc_map.php:21
+msgid "Moderate"
+msgstr ""
+
+#: includes/vc_map.php:22
+msgid "Expensive"
+msgstr ""
+
+#: includes/vc_map.php:23
+msgid "Very expensive"
+msgstr ""
+
+#: includes/vc_map.php:24
+msgid "If you have to ask the price, you can't afford it*"
+msgstr ""
+
+#: includes/vc_map.php:283 includes/vc_map.php:292
 msgid "Schema FAQ Page"
 msgstr ""
 
 #. Author of the plugin/theme
-#: includes/vc_map.php:282 includes/vc_map.php:298 includes/vc_map.php:335
-#: includes/vc_map.php:441
+#: includes/vc_map.php:291 includes/vc_map.php:307 includes/vc_map.php:344
+#: includes/vc_map.php:474 includes/vc_map.php:626
 msgid "TodoBravo"
 msgstr ""
 
-#: includes/vc_map.php:292
+#: includes/vc_map.php:301
 msgid "Schema FAQ item"
 msgstr ""
 
-#: includes/vc_map.php:302
+#: includes/vc_map.php:311
 msgid "Question"
 msgstr ""
 
-#: includes/vc_map.php:305
+#: includes/vc_map.php:314
 msgid "Enter your question"
 msgstr ""
 
-#: includes/vc_map.php:310
+#: includes/vc_map.php:319
 msgid "Answer"
 msgstr ""
 
-#: includes/vc_map.php:313
+#: includes/vc_map.php:322
 msgid "Enter your answer"
 msgstr ""
 
-#: includes/vc_map.php:330
+#: includes/vc_map.php:339
 msgid "Schema Product"
 msgstr ""
 
-#: includes/vc_map.php:339 includes/vc_map.php:452
+#: includes/vc_map.php:348 includes/vc_map.php:485 includes/vc_map.php:630
 msgid "Name"
 msgstr ""
 
-#: includes/vc_map.php:342
+#: includes/vc_map.php:351
 msgid "Enter the name of the product"
 msgstr ""
 
-#: includes/vc_map.php:347 includes/vc_map.php:460
+#: includes/vc_map.php:356 includes/vc_map.php:500 includes/vc_map.php:638
 msgid "Description"
 msgstr ""
 
-#: includes/vc_map.php:350
+#: includes/vc_map.php:359
 msgid "Enter the description of the product"
 msgstr ""
 
-#: includes/vc_map.php:354
+#: includes/vc_map.php:363
 msgid "MPN"
 msgstr ""
 
-#: includes/vc_map.php:357
+#: includes/vc_map.php:366
 msgid "Enter the manufacturer Part Number (MPN) of the product"
 msgstr ""
 
-#: includes/vc_map.php:361
+#: includes/vc_map.php:370
 msgid "SKU"
 msgstr ""
 
-#: includes/vc_map.php:364
+#: includes/vc_map.php:373
 msgid "Enter the SKU of the product"
 msgstr ""
 
-#: includes/vc_map.php:368
+#: includes/vc_map.php:377 includes/vc_map.php:653
 msgid "Brand"
 msgstr ""
 
-#: includes/vc_map.php:371
+#: includes/vc_map.php:380
 msgid "Enter the brand of the product"
 msgstr ""
 
-#: includes/vc_map.php:375 includes/vc_map.php:481
+#: includes/vc_map.php:384 includes/vc_map.php:521 includes/vc_map.php:667
 msgid "Images"
 msgstr ""
 
-#: includes/vc_map.php:378
+#: includes/vc_map.php:387
 msgid ""
 "Select or upload product images. For best results, provide multiple high-"
 "resolution images (minimum of 50K pixels when multiplying width and height) "
 "with the following aspect ratios: 16x9, 4x3, and 1x1."
 msgstr ""
 
-#: includes/vc_map.php:382 includes/vc_map.php:552
+#: includes/vc_map.php:391 includes/vc_map.php:599
 msgid "ratingValue"
 msgstr ""
 
-#: includes/vc_map.php:385
+#: includes/vc_map.php:394
 msgid "Enter the ratingValue of the product"
 msgstr ""
 
-#: includes/vc_map.php:386 includes/vc_map.php:394 includes/vc_map.php:556
-#: includes/vc_map.php:564
-msgid "Agregate Review"
+#: includes/vc_map.php:395 includes/vc_map.php:403 includes/vc_map.php:603
+#: includes/vc_map.php:611
+msgid "Agregate Rating"
 msgstr ""
 
-#: includes/vc_map.php:390 includes/vc_map.php:560
+#: includes/vc_map.php:399 includes/vc_map.php:607
 msgid "reviewCount"
 msgstr ""
 
-#: includes/vc_map.php:393 includes/vc_map.php:563
+#: includes/vc_map.php:402 includes/vc_map.php:610
 msgid "Enter the reviewCount of the ratingValue"
 msgstr ""
 
-#: includes/vc_map.php:398
+#: includes/vc_map.php:407
+msgid "review ratingValue"
+msgstr ""
+
+#: includes/vc_map.php:410
+msgid "Enter the ratingValue of the review"
+msgstr ""
+
+#: includes/vc_map.php:411 includes/vc_map.php:419 includes/vc_map.php:427
+msgid "Review"
+msgstr ""
+
+#: includes/vc_map.php:415
+msgid "review Author Name"
+msgstr ""
+
+#: includes/vc_map.php:418
+msgid "Enter the author Name of the person reviewing the product"
+msgstr ""
+
+#: includes/vc_map.php:423
+msgid "review Body"
+msgstr ""
+
+#: includes/vc_map.php:426
+msgid "Enter the review content for the product"
+msgstr ""
+
+#: includes/vc_map.php:431 includes/vc_map.php:674
 msgid "offerCount"
 msgstr ""
 
-#: includes/vc_map.php:401
+#: includes/vc_map.php:434 includes/vc_map.php:677
 msgid "Enter the offerCount"
 msgstr ""
 
-#: includes/vc_map.php:402 includes/vc_map.php:410 includes/vc_map.php:418
-#: includes/vc_map.php:426
+#: includes/vc_map.php:435 includes/vc_map.php:443 includes/vc_map.php:451
+#: includes/vc_map.php:459 includes/vc_map.php:678 includes/vc_map.php:686
+#: includes/vc_map.php:694 includes/vc_map.php:702
 msgid "Agregate Offer"
 msgstr ""
 
-#: includes/vc_map.php:406
+#: includes/vc_map.php:439 includes/vc_map.php:682
 msgid "lowPrice"
 msgstr ""
 
-#: includes/vc_map.php:409
+#: includes/vc_map.php:442 includes/vc_map.php:685
 msgid "Enter the lowPrice"
 msgstr ""
 
-#: includes/vc_map.php:414
+#: includes/vc_map.php:447 includes/vc_map.php:690
 msgid "highPrice"
 msgstr ""
 
-#: includes/vc_map.php:417
+#: includes/vc_map.php:450 includes/vc_map.php:693
 msgid "Enter the highPrice"
 msgstr ""
 
-#: includes/vc_map.php:422
+#: includes/vc_map.php:455 includes/vc_map.php:698
 msgid "priceCurrency"
 msgstr ""
 
-#: includes/vc_map.php:425
+#: includes/vc_map.php:458 includes/vc_map.php:701
 msgid "Enter the priceCurrency code EUR, USD..."
 msgstr ""
 
-#: includes/vc_map.php:436
+#: includes/vc_map.php:469
 msgid "Schema LocalBusiness"
 msgstr ""
 
-#: includes/vc_map.php:445
+#: includes/vc_map.php:478
 msgid "id"
 msgstr ""
 
-#: includes/vc_map.php:448
+#: includes/vc_map.php:481
 msgid ""
 "Enter the globally unique ID of the specific business location in the form "
 "of a URL"
 msgstr ""
 
-#: includes/vc_map.php:455
+#: includes/vc_map.php:488
 msgid "Enter the name of the local business"
 msgstr ""
 
-#: includes/vc_map.php:463
+#: includes/vc_map.php:493
+msgid "Member Of organization"
+msgstr ""
+
+#: includes/vc_map.php:496
+msgid "Enter the Organization ID/url if exists"
+msgstr ""
+
+#: includes/vc_map.php:503
 msgid "Enter the description of the local business"
 msgstr ""
 
-#: includes/vc_map.php:467
+#: includes/vc_map.php:507
 msgid "url"
 msgstr ""
 
-#: includes/vc_map.php:470
+#: includes/vc_map.php:510
 msgid "Enter the web url of the local business."
 msgstr ""
 
-#: includes/vc_map.php:474
+#: includes/vc_map.php:514
 msgid "Telephone"
 msgstr ""
 
-#: includes/vc_map.php:477
+#: includes/vc_map.php:517
 msgid "Enter the phone number with country code +NN of the local business."
 msgstr ""
 
-#: includes/vc_map.php:484
+#: includes/vc_map.php:524
 msgid ""
 "Select or upload product images. For best results, provide multiple high-"
 "resolution images (minimum of 50K pixels when multiplying width and height) "
 "with the following aspect ratios: 16x9, 4x3, and 1x1"
 msgstr ""
 
-#: includes/vc_map.php:488
-msgid "Street"
-msgstr ""
-
-#: includes/vc_map.php:491
-msgid "Enter the street of the local business"
-msgstr ""
-
-#: includes/vc_map.php:492 includes/vc_map.php:500 includes/vc_map.php:508
-#: includes/vc_map.php:516 includes/vc_map.php:524 includes/vc_map.php:532
-#: includes/vc_map.php:540 includes/vc_map.php:548
-msgid "Address"
-msgstr ""
-
-#: includes/vc_map.php:496
-msgid "Locality"
-msgstr ""
-
-#: includes/vc_map.php:499 includes/vc_map.php:507
-msgid "Enter the Locality of the local business"
-msgstr ""
-
-#: includes/vc_map.php:504
-msgid "Region"
-msgstr ""
-
-#: includes/vc_map.php:512
-msgid "Postal Code"
-msgstr ""
-
-#: includes/vc_map.php:515
-msgid "Enter the postal Code of the local business"
-msgstr ""
-
-#: includes/vc_map.php:520
-msgid "Country code"
-msgstr ""
-
-#: includes/vc_map.php:523
-msgid "Enter the Country Code 2 lettersof the local business"
-msgstr ""
-
 #: includes/vc_map.php:528
-msgid "Latitude"
+msgid "Price Range"
 msgstr ""
 
 #: includes/vc_map.php:531
+msgid "Enter the Price Range the local business"
+msgstr ""
+
+#: includes/vc_map.php:535
+msgid "Street"
+msgstr ""
+
+#: includes/vc_map.php:538
+msgid "Enter the street of the local business"
+msgstr ""
+
+#: includes/vc_map.php:539 includes/vc_map.php:547 includes/vc_map.php:555
+#: includes/vc_map.php:563 includes/vc_map.php:571 includes/vc_map.php:579
+#: includes/vc_map.php:587 includes/vc_map.php:595
+msgid "Address"
+msgstr ""
+
+#: includes/vc_map.php:543
+msgid "Locality"
+msgstr ""
+
+#: includes/vc_map.php:546 includes/vc_map.php:554
+msgid "Enter the Locality of the local business"
+msgstr ""
+
+#: includes/vc_map.php:551
+msgid "Region"
+msgstr ""
+
+#: includes/vc_map.php:559
+msgid "Postal Code"
+msgstr ""
+
+#: includes/vc_map.php:562
+msgid "Enter the postal Code of the local business"
+msgstr ""
+
+#: includes/vc_map.php:567
+msgid "Country code"
+msgstr ""
+
+#: includes/vc_map.php:570
+msgid "Enter the Country Code 2 lettersof the local business"
+msgstr ""
+
+#: includes/vc_map.php:575
+msgid "Latitude"
+msgstr ""
+
+#: includes/vc_map.php:578
 msgid "Enter the latitude of the local business"
 msgstr ""
 
-#: includes/vc_map.php:536
+#: includes/vc_map.php:583
 msgid "Longitude"
 msgstr ""
 
-#: includes/vc_map.php:539
+#: includes/vc_map.php:586
 msgid "Enter the longitude of the local business"
 msgstr ""
 
-#: includes/vc_map.php:544
+#: includes/vc_map.php:591
 msgid "Map url"
 msgstr ""
 
-#: includes/vc_map.php:547
+#: includes/vc_map.php:594
 msgid "Enter the Map url of the local business"
 msgstr ""
 
-#: includes/vc_map.php:555
+#: includes/vc_map.php:602
 msgid "Enter the ratingValue of the local business"
+msgstr ""
+
+#: includes/vc_map.php:621
+msgid "Schema Service"
+msgstr ""
+
+#: includes/vc_map.php:633
+msgid "Enter the name of the service"
+msgstr ""
+
+#: includes/vc_map.php:641
+msgid "Enter the description of the service"
+msgstr ""
+
+#: includes/vc_map.php:645
+msgid "service Type"
+msgstr ""
+
+#: includes/vc_map.php:648
+msgid ""
+"Enter the type of the service. For best results, use Wikipedia url reference."
+msgstr ""
+
+#: includes/vc_map.php:656
+msgid "Enter the brand of the service"
+msgstr ""
+
+#: includes/vc_map.php:660
+msgid "Provider"
+msgstr ""
+
+#: includes/vc_map.php:663
+msgid "Enter the LocalBusiness ID/url if exists"
+msgstr ""
+
+#: includes/vc_map.php:670
+msgid ""
+"Select or upload service images. For best results, provide multiple high-"
+"resolution images (minimum of 50K pixels when multiplying width and height) "
+"with the following aspect ratios: 16x9, 4x3, and 1x1."
+msgstr ""
+
+#: includes/vc_map.php:706
+msgid "Areas"
+msgstr ""
+
+#: includes/vc_map.php:709
+msgid ""
+"Enter the areas Served. For best results, use https://www.wikidata.org/ url "
+"references. One per line."
+msgstr ""
+
+#: includes/vc_map.php:710
+msgid "Areas served"
 msgstr ""
 
 #. Plugin Name of the plugin/theme

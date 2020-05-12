@@ -15,6 +15,15 @@ function tdb_schema_seo_mappingVC() {
 		$icon['faqitem'] = 'fa fa-question-circle';
 	}
 	
+	$priceRanges = array(
+		'' => '',
+		__( "Inexpensive", "tdb-schema-seo" ) => '$',
+		__( "Moderate", "tdb-schema-seo" ) => '$$',
+		__( "Expensive", "tdb-schema-seo" ) => '$$$',
+		__( "Very expensive", "tdb-schema-seo" ) => '$$$$',
+		__( "If you have to ask the price, you can't afford it*", "tdb-schema-seo" ) => '$$$$$'
+	);
+	
 	$countries = array
             (
             'AF' => 'Afghanistan',
@@ -383,7 +392,7 @@ function tdb_schema_seo_mappingVC() {
 				"param_name" => "ratingvalue",
 				"value" => "",
 				"description" => esc_html__( "Enter the ratingValue of the product", "tdb-schema-seo" ),
-				'group' => esc_html__('Agregate Review', 'tdb-schema-seo')
+				'group' => esc_html__('Agregate Rating', 'tdb-schema-seo')
 			),
 			array(
 				"type" => "textfield",
@@ -391,7 +400,31 @@ function tdb_schema_seo_mappingVC() {
 				"param_name" => "reviewcount",
 				"value" => "",
 				"description" => esc_html__( "Enter the reviewCount of the ratingValue", "tdb-schema-seo" ),
-				'group' => esc_html__('Agregate Review', 'tdb-schema-seo')
+				'group' => esc_html__('Agregate Rating', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "review ratingValue", "tdb-schema-seo" ),
+				"param_name" => "reviewratingvalue",
+				"value" => "",
+				"description" => esc_html__( "Enter the ratingValue of the review", "tdb-schema-seo" ),
+				'group' => esc_html__('Review', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "review Author Name", "tdb-schema-seo" ),
+				"param_name" => "reviewauthor",
+				"value" => "",
+				"description" => esc_html__( "Enter the author Name of the person reviewing the product", "tdb-schema-seo" ),
+				'group' => esc_html__('Review', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textarea",
+				"heading" => esc_html__( "review Body", "tdb-schema-seo" ),
+				"param_name" => "reviewbody",
+				"value" => "",
+				"description" => esc_html__( "Enter the review content for the product", "tdb-schema-seo" ),
+				'group' => esc_html__('Review', 'tdb-schema-seo')
 			),
 			array(
 				"type" => "textfield",
@@ -456,6 +489,13 @@ function tdb_schema_seo_mappingVC() {
 				"admin_label" => true
 			),
 			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "Member Of organization", "tdb-schema-seo" ),
+				"param_name" => "memberof",
+				"value" => "",
+				"description" => esc_html__( "Enter the Organization ID/url if exists", "tdb-schema-seo" )
+			),
+			array(
 				"type" => "textarea",
 				"heading" => esc_html__( "Description", "tdb-schema-seo" ),
 				"param_name" => "description",
@@ -482,6 +522,13 @@ function tdb_schema_seo_mappingVC() {
 				"param_name" => "images",
 				"value" => "",
 				"description" => esc_html__( "Select or upload product images. For best results, provide multiple high-resolution images (minimum of 50K pixels when multiplying width and height) with the following aspect ratios: 16x9, 4x3, and 1x1", "tdb-schema-seo" )
+			),
+			array(
+				"type" => "dropdown",
+				"heading" => esc_html__( "Price Range", "tdb-schema-seo" ),
+				"param_name" => "pricerange",
+				"value" => $priceRanges,
+				"description" => esc_html__( "Enter the Price Range the local business", "tdb-schema-seo" )
 			),
 			array(
 				"type" => "textfield",
@@ -553,7 +600,7 @@ function tdb_schema_seo_mappingVC() {
 				"param_name" => "ratingvalue",
 				"value" => "",
 				"description" => esc_html__( "Enter the ratingValue of the local business", "tdb-schema-seo" ),
-				'group' => esc_html__('Agregate Review', 'tdb-schema-seo')
+				'group' => esc_html__('Agregate Rating', 'tdb-schema-seo')
 			),
 			array(
 				"type" => "textfield",
@@ -561,7 +608,106 @@ function tdb_schema_seo_mappingVC() {
 				"param_name" => "reviewcount",
 				"value" => "",
 				"description" => esc_html__( "Enter the reviewCount of the ratingValue", "tdb-schema-seo" ),
-				'group' => esc_html__('Agregate Review', 'tdb-schema-seo')
+				'group' => esc_html__('Agregate Rating', 'tdb-schema-seo')
+			),
+		)
+	) );
+	
+	/*
+	 * Service
+	 */
+	
+	vc_map( array(
+		"name" => esc_html__( "Schema Service", "tdb-schema-seo" ),
+		"base" => "tdb_schema_seo_service",
+		"content_element" => true,
+		"show_settings_on_create" => true,
+		"icon" => $icon['default'],
+		"category" => esc_html__( "TodoBravo", "tdb-schema-seo"),
+		"params" => array(
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "Name", "tdb-schema-seo" ),
+				"param_name" => "name",
+				"value" => "",
+				"description" => esc_html__( "Enter the name of the service", "tdb-schema-seo" ),
+				"admin_label" => true
+			),
+			array(
+				"type" => "textarea",
+				"heading" => esc_html__( "Description", "tdb-schema-seo" ),
+				"param_name" => "description",
+				"value" => "",
+				"description" => esc_html__( "Enter the description of the service", "tdb-schema-seo" )
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "service Type", "tdb-schema-seo" ),
+				"param_name" => "servicetype",
+				"value" => "",
+				"description" => esc_html__( "Enter the type of the service. For best results, use Wikipedia url reference.", "tdb-schema-seo" ),
+				"admin_label" => true
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "Brand", "tdb-schema-seo" ),
+				"param_name" => "brand",
+				"value" => "",
+				"description" => esc_html__( "Enter the brand of the service", "tdb-schema-seo" )
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "Provider", "tdb-schema-seo" ),
+				"param_name" => "provider",
+				"value" => "",
+				"description" => esc_html__( "Enter the LocalBusiness ID/url if exists", "tdb-schema-seo" )
+			),
+			array(
+				"type" => "attach_images",
+				"heading" => esc_html__( "Images", "tdb-schema-seo" ),
+				"param_name" => "images",
+				"value" => "",
+				"description" => esc_html__( "Select or upload service images. For best results, provide multiple high-resolution images (minimum of 50K pixels when multiplying width and height) with the following aspect ratios: 16x9, 4x3, and 1x1.", "tdb-schema-seo" )
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "offerCount", "tdb-schema-seo" ),
+				"param_name" => "offercount",
+				"value" => "",
+				"description" => esc_html__( "Enter the offerCount", "tdb-schema-seo" ),
+				'group' => esc_html__('Agregate Offer', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "lowPrice", "tdb-schema-seo" ),
+				"param_name" => "lowprice",
+				"value" => "",
+				"description" => esc_html__( "Enter the lowPrice", "tdb-schema-seo" ),
+				'group' => esc_html__('Agregate Offer', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "highPrice", "tdb-schema-seo" ),
+				"param_name" => "highprice",
+				"value" => "",
+				"description" => esc_html__( "Enter the highPrice", "tdb-schema-seo" ),
+				'group' => esc_html__('Agregate Offer', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "priceCurrency", "tdb-schema-seo" ),
+				"param_name" => "pricecurrency",
+				"value" => "EUR",
+				"description" => esc_html__( "Enter the priceCurrency code EUR, USD...", "tdb-schema-seo" ),
+				'group' => esc_html__('Agregate Offer', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "exploded_textarea",
+				"heading" => esc_html__( "Areas", "tdb-schema-seo" ),
+				"param_name" => "areaserved",
+				"value" => "",
+				"description" => esc_html__( "Enter the areas Served. For best results, use https://www.wikidata.org/ url references. One per line.", "tdb-schema-seo" ),
+				'group' => esc_html__('Areas served', 'tdb-schema-seo')
 			),
 		)
 	) );
