@@ -11,6 +11,7 @@ Available schema:
 - **Product**: [https://schema.org/Product](https://schema.org/Product)
 - **LocalBusiness**: [https://schema.org/LocalBusiness](https://schema.org/LocalBusiness)
 - **Service**: [https://schema.org/Service](https://schema.org/Service)
+- **Event**: [https://schema.org/Event](https://schema.org/Event)
 
 More information are available in spanish on [https://www.todobravo.es/desarrollo-web/](https://www.todobravo.es/desarrollo-web/).
 
@@ -47,6 +48,13 @@ Parameters list:
 Parameters list:
 - name, description, servicetype, provider, brand, offercount, lowprice, highprice, pricecurrency
 - areaserved: list of areas separate with comma
+- images: list of id images separate with comma
+
+### Event ###
+    [tdb_schema_seo_event paramter1="" parameters2=""]
+
+Parameters list:
+- name,description, location, streetaddress, addresslocality, addressregion, postalcode, addresscountry, url, startdate, enddate, offer, organizer, performer
 - images: list of id images separate with comma
 
 ## License

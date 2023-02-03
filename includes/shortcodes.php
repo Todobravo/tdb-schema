@@ -211,4 +211,83 @@ function tdb_schema_seo_service_func ($atts) {
 }
 add_shortcode( 'tdb_schema_seo_service', 'tdb_schema_seo_service_func' );
 
+/*
+ * Schema Event
+ * [tdb_schema_seo_event]
+ * Parameters
+ * 	name,description, location, streetaddress, addresslocality, addressregion, postalcode, addresscountry, url, startdate, enddate, offer, organizer, performer
+ * 	images: list of id images separate with comma
+ */
+
+function tdb_schema_seo_event_func ($atts) {
+	$a = shortcode_atts( array(
+		'name' => '',
+		'description' => '',
+		'url' => '',
+		'locationname' => '',
+		'streetaddress' => '',
+		'addresslocality' => '',
+		'addressregion' => '',
+		'postalcode' => '',
+		'addresscountry' => '',
+		'images' => '',
+		'startdate' => '',
+		'enddate' => '',
+		'urloffer' => '',
+		'priceoffer' => '',
+		'pricecurrencyoffer' => '',
+		'validfromoffer' => '',
+		'nameorganizer' => '',
+		'urlorganizer' => '',
+		'nameperformer' => '',
+        ), $atts );
+	
+	$json_arr = array();
+	$json_arr['@context'] = 'https://schema.org';
+	$json_arr['@type'] = 'Event';
+	
+	$json_arr['eventAttendanceMode'] = 'https://schema.org/OfflineEventAttendanceMode';
+	$json_arr['eventStatus'] = 'https://schema.org/EventScheduled';
+	
+	$json_arr['name'] = esc_attr($a['name']);
+	
+	$postaddress = array('@type' => 'PostalAddress', 'streetAddress' => esc_attr($a['streetaddress']), 'addressLocality' => esc_attr($a['addresslocality']), 'addressRegion' => esc_attr($a['addressregion']), 'postalCode' => esc_attr($a['postalcode']), 'addressCountry' => esc_attr($a['addresscountry']));
+	$json_arr['location'] = array('@type' => "Place", 'name' => esc_attr($a['locationname']), 'address' => $postaddress);
+
+	
+	if ($a['description'] !== '') $json_arr['description'] = esc_attr($a['description']);
+	
+	if ($a['url'] !== '') $json_arr['url'] = esc_attr($a['url']);
+	
+	if ($a['startdate'] !== '') $json_arr['startDate'] = esc_attr($a['startdate']);
+	if ($a['enddate'] !== '') $json_arr['endDate'] = esc_attr($a['enddate']);
+	
+		
+	if ($a['images'] !== '') {
+		$images_id = explode(',', $a['images']);
+		$images_url = array();
+		foreach($images_id as $i){
+			if (wp_get_attachment_url($i)) $images_url[] = wp_get_attachment_url($i);
+		}
+		if ($images_url) $json_arr['image'] = $images_url;
+	}
+	
+	if ($a['priceoffer'] !== '') {
+		$json_arr['offers'] = array('@type' => 'Offer', 'url' => esc_attr($a['urloffer']), 'price' => esc_attr($a['priceoffer']), 'priceCurrency' => esc_attr($a['pricecurrencyoffer']), 'validFrom' => esc_attr($a['validfromoffer']), 'availability' => 'https://schema.org/InStock');
+	}
+	
+	if ($a['nameorganizer'] !== '') {
+		$json_arr['organizer'] = array('@type' => 'Organization', 'name' => esc_attr($a['nameorganizer']), 'url' => esc_attr($a['urlorganizer']));
+	}
+	
+	if ($a['nameperformer'] !== '') {
+		$json_arr['performer'] = array('@type' => 'PerformingGroup', 'name' => esc_attr($a['nameperformer']));
+	}
+	
+	
+	
+	return '<div class="wpb_tdb_schema_seo"><script type="application/ld+json">' .json_encode($json_arr) .'</script></div>';
+}
+add_shortcode( 'tdb_schema_seo_event', 'tdb_schema_seo_event_func' );
+
 ?>

@@ -1,8 +1,8 @@
 === TDB Schema SEO ===
 Contributors: todobravo
 Tags: Schema.org, structured data, SEO
-Requires at least: 4.0
-Tested up to: 5.3
+Requires at least: 5.0
+Tested up to: 6.0
 Requires PHP: 5.6
 Stable tag: 1.2.0
 License: GPL v3
@@ -32,3 +32,7 @@ Just install the plugin and active it.
 * Add Service.
 * Add priceRange to LocalBusiness
 * Add review to Product
+
+== Changelog ==
+= 1.3.0 =
+* Add Event.

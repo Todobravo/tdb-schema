@@ -711,6 +711,171 @@ function tdb_schema_seo_mappingVC() {
 			),
 		)
 	) );
+	
+	/*
+	 * Event
+	 */
+	
+	vc_map( array(
+		"name" => esc_html__( "Schema Event", "tdb-schema-seo" ),
+		"base" => "tdb_schema_seo_event",
+		"content_element" => true,
+		"show_settings_on_create" => true,
+		"icon" => $icon['default'],
+		"category" => esc_html__( "TodoBravo", "tdb-schema-seo"),
+		"params" => array(
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "Name", "tdb-schema-seo" ),
+				"param_name" => "name",
+				"value" => "",
+				"description" => esc_html__( "Enter the name of the event", "tdb-schema-seo" ),
+				"admin_label" => true
+			),
+			array(
+				"type" => "textarea",
+				"heading" => esc_html__( "Description", "tdb-schema-seo" ),
+				"param_name" => "description",
+				"value" => "",
+				"description" => esc_html__( "Enter the description of the event", "tdb-schema-seo" )
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "url", "tdb-schema-seo" ),
+				"param_name" => "url",
+				"value" => "",
+				"description" => esc_html__( "Enter the web url of the event.", "tdb-schema-seo" )
+			),
+			array(
+				"type" => "attach_images",
+				"heading" => esc_html__( "Images", "tdb-schema-seo" ),
+				"param_name" => "images",
+				"value" => "",
+				"description" => esc_html__( "Select or upload product images. For best results, provide multiple high-resolution images (minimum of 50K pixels when multiplying width and height) with the following aspect ratios: 16x9, 4x3, and 1x1", "tdb-schema-seo" )
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "Location name", "tdb-schema-seo" ),
+				"param_name" => "locationname",
+				"value" => "",
+				"description" => esc_html__( "Enter the location name of the event", "tdb-schema-seo" ),
+				'group' => esc_html__('Address', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "Street", "tdb-schema-seo" ),
+				"param_name" => "streetaddress",
+				"value" => "",
+				"description" => esc_html__( "Enter the street of the event", "tdb-schema-seo" ),
+				'group' => esc_html__('Address', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "Locality", "tdb-schema-seo" ),
+				"param_name" => "addresslocality",
+				"value" => "",
+				"description" => esc_html__( "Enter the Locality of the event", "tdb-schema-seo" ),
+				'group' => esc_html__('Address', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "Region", "tdb-schema-seo" ),
+				"param_name" => "addressregion",
+				"value" => "",
+				"description" => esc_html__( "Enter the Locality of the event", "tdb-schema-seo" ),
+				'group' => esc_html__('Address', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "Postal Code", "tdb-schema-seo" ),
+				"param_name" => "postalcode",
+				"value" => "",
+				"description" => esc_html__( "Enter the postal Code of the event", "tdb-schema-seo" ),
+				'group' => esc_html__('Address', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "dropdown",
+				"heading" => esc_html__( "Country code", "tdb-schema-seo" ),
+				"param_name" => "addresscountry",
+				"value" => $countries_map,
+				"description" => esc_html__( "Enter the Country Code 2 letters of the event", "tdb-schema-seo" ),
+				'group' => esc_html__('Address', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "start Date", "tdb-schema-seo" ),
+				"param_name" => "startdate",
+				"value" => "",
+				"description" => esc_html__( "Enter the start date of the event YYYY-MM-DD", "tdb-schema-seo" ),
+				'group' => esc_html__('Date', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "end Date", "tdb-schema-seo" ),
+				"param_name" => "enddate",
+				"value" => "",
+				"description" => esc_html__( "Enter the end date of the event YYYY-MM-DD", "tdb-schema-seo" ),
+				'group' => esc_html__('Date', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "Url to buy", "tdb-schema-seo" ),
+				"param_name" => "urloffer",
+				"value" => "",
+				"description" => esc_html__( "Enter the  URL of a page providing the ability to buy tickets", "tdb-schema-seo" ),
+				'group' => esc_html__('Offers', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "Price", "tdb-schema-seo" ),
+				"param_name" => "priceoffer",
+				"value" => "",
+				"description" => esc_html__( "Enter the lowest available price available for your tickets", "tdb-schema-seo" ),
+				'group' => esc_html__('Offers', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "Currency", "tdb-schema-seo" ),
+				"param_name" => "pricecurrencyoffer",
+				"value" => "",
+				"description" => esc_html__( "Enter 3-letter ISO 4217 currency code.", "tdb-schema-seo" ),
+				'group' => esc_html__('Offers', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "Valid From Date", "tdb-schema-seo" ),
+				"param_name" => "validfromoffer",
+				"value" => "",
+				"description" => esc_html__( "The date and time when tickets go on sale YYYY-MM-DD.", "tdb-schema-seo" ),
+				'group' => esc_html__('Offers', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "Name", "tdb-schema-seo" ),
+				"param_name" => "nameorganizer",
+				"value" => "",
+				"description" => esc_html__( "The organization that is hosting the event.", "tdb-schema-seo" ),
+				'group' => esc_html__('Organizer', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "URL", "tdb-schema-seo" ),
+				"param_name" => "urlorganizer",
+				"value" => "",
+				"description" => esc_html__( "The event host's domain URL.", "tdb-schema-seo" ),
+				'group' => esc_html__('Organizer', 'tdb-schema-seo')
+			),
+			array(
+				"type" => "textfield",
+				"heading" => esc_html__( "Name", "tdb-schema-seo" ),
+				"param_name" => "nameperformer",
+				"value" => "",
+				"description" => esc_html__( "The participants performing at the event, such as artists and comedians.", "tdb-schema-seo" ),
+				'group' => esc_html__('Performer', 'tdb-schema-seo')
+			),
+			
+		)
+	) );
 }
 
 ?>
