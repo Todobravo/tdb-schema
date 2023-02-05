@@ -217,7 +217,6 @@ add_shortcode( 'tdb_schema_seo_service', 'tdb_schema_seo_service_func' );
  * Parameters
  * 	name,description, location, streetaddress, addresslocality, addressregion, postalcode, addresscountry, url, startdate, enddate, offer, organizer, performer
  * 	images: list of id images separate with comma
- * 	images_url: "true", use images_url instead of id
  */
 
 function tdb_schema_seo_event_func ($atts) {
@@ -267,13 +266,13 @@ function tdb_schema_seo_event_func ($atts) {
 		
 	if ($a['images'] !== '') {
 		$images_id = explode(',', $a['images']);
-		$images_url = array();
+		$list_url = array();
 		foreach($images_id as $i){
 			/* si parametres $images_url = true, les url sont directement fournies */
-			if ($images_url == 'true') $images_url[] = $images_id;
-			else if (wp_get_attachment_url($i)) $images_url[] = wp_get_attachment_url($i);
+			if ($a['images_url'] == 'true') $list_url[] = $i;
+			else if (wp_get_attachment_url($i)) $list_url[] = wp_get_attachment_url($i);
 		}
-		if ($images_url) $json_arr['image'] = $images_url;
+		if ($list_url) $json_arr['image'] = $list_url;
 	}
 	
 	if ($a['priceoffer'] !== '') {

@@ -4,7 +4,7 @@ Tags: Schema.org, structured data, SEO
 Requires at least: 5.0
 Tested up to: 6.0
 Requires PHP: 5.6
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 License: GPL v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -40,3 +40,7 @@ Just install the plugin and active it.
 == Changelog ==
 = 1.3.1 =
 * Add Event Paramter images_url
+
+== Changelog ==
+= 1.3.2 =
+* Minor correction
